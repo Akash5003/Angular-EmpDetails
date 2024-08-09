@@ -1,0 +1,56 @@
+<h1>{{topic}} {{name}}</h1>
+<br>
+<input type = "text" [(ngModel)] = "name">
+<br>
+<p>clicked times= {{clickCount}} </p>
+<button on-click="clickme()">adi poli+</button>  
+<button on-click="mecclick()">adi poli-</button>
+<br>
+write a text to appear below:<input type="text" (input)="texting($event)">
+<h1 >{{value}}</h1>
+<h1 style="color: lime">{{title}}</h1>
+<ul>
+    <li *ngFor="let movie of movies">{{movie}}</li>
+</ul>
+<label for="">type num <label>
+<input type="text" [(ngModel)]="num">
+
+<div [ngSwitch]="num">
+    <div *ngSwitchCase="0">zero</div>   
+    <div *ngSwitchCase="1">one</div>
+    <div *ngSwitchCase="2">two</div>
+    <div *ngSwitchCase="3">three</div>
+    <div *ngSwitchCase="4">four</div>
+    <div *ngSwitchCase="5">five</div>
+    <div *ngSwitchCase="6">six</div>
+    <div *ngSwitchCase="7">seven</div>
+    <div *ngSwitchCase="8">eight</div>
+    <div *ngSwitchCase="9">nine</div>
+    <div *ngSwitchCase="10">ten</div>
+</div>
+Enter a color:<input type="text" [(ngModel)]="color">
+Enter a backgrounddcolor:<input type="text" [(ngModel)]="backgroundcolor">
+<div [ngStyle]="{'color':color,'background-color':backgroundcolor}">
+    <h2><span>This line is appeared in the color you entered</span></h2></div>
+<p>without pipe the date is:{{todate}}</p>
+<p>with pipe the date is:{{todate|date}}</p>
+<p>with pipe and argument-medium the date is:{{todate|date:'medium'}}</p>
+<p>with pipe and argument-short the date is:{{todate|date:'short'}}</p>
+<p>with pipe and argument-fullDate the date is:{{todate|date:'fullDate'}}</p>
+<p>with pipe and argument-longDate the date is:{{todate|date:'longDate'}}</p>
+<h2>uppercase:{{word1|uppercase}}</h2>
+<h2>lowercase:{{word2|lowercase}}</h2>
+
+<h1>price={{price|currency:'INR'}}</h1>
+<div>
+<h5>Cars5003</h5>
+<form>Enter car name to add:</form>
+<input type="text" name="carbrand"[(ngModel)]="carname">
+<br>
+<button on-click="addcars()">clicktoadd</button>
+</div>
+<br><br>
+<app-cars [carinput]="cars"></app-cars>
+
+
+
